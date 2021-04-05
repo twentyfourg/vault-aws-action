@@ -1,0 +1,13 @@
+# action.yml
+name: 'Vault Pipeline Auth'
+description: 'Retreive aws role credentials using a vault token'
+outputs:
+  access_key:
+    description: 'access key of role credential set'
+  secret_key:
+    description: 'secret key of role credential set'
+  session_token:
+    description: 'session token of role credential set'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
