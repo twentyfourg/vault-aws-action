@@ -21,6 +21,6 @@ AWS_ACCESS_KEY_ID=$(jq -r '.data.access_key' creds.json)
 AWS_SECRET_ACCESS_KEY=$(jq -r '.data.secret_key' creds.json)
 AWS_SESSION_TOKEN=$(jq -r '.data.security_token' creds.json)
 
-echo "::set-output name=access_key::$AWS_ACCESS_KEY_ID"
-echo "::set-output name=secret_key::$AWS_SECRET_ACCESS_KEY"
-echo "::set-output name=session_token::$AWS_SESSION_TOKEN"
+echo "access_key=$AWS_ACCESS_KEY_ID" >> $GITHUB_OUTPUT
+echo "secret_key=$AWS_SECRET_ACCESS_KEY" >> $GITHUB_OUTPUT
+echo "session_token=$AWS_SESSION_TOKEN" >> $GITHUB_OUTPUT
